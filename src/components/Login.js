@@ -3,6 +3,7 @@ import logo from "../icons/logo.svg";
 import { login } from "../Firebase";
 import { useState } from "react";
 import { async } from "@firebase/util";
+import toast, { Toaster } from 'react-hot-toast';
 
 function Login() {
 
@@ -15,12 +16,14 @@ function Login() {
       e.preventDefault()
       const user = await login(email,password)
       console.log(user);
+      
   }
 
 
   return (
     <div className="container">
       <form className="form-wrapper" onSubmit={handleLogin}>
+        <Toaster position="top-right"/>
         <div className="logo-holder">
           <img src={logo} alt="logo" />
         </div>
