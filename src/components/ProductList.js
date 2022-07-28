@@ -1,56 +1,41 @@
-import React, { useEffect, useState } from 'react'
 import logo from "../icons/logo.svg";
 
 export const ProductList = () => {
-
-    const [products, setProducts] = useState([]);
-    
-    useEffect(()=>{
-        fetch ("https://fakestoreapi.com/products")
-        .then(response => response.json())
-        .then(result => setProducts(result))
-        .catch(error => console.log(error));
-    }, [])
-
   return (
-    <div className='container'>
-        <img src={logo} alt="logo" />
-        <div className='d-flex justify-content-between mt-5'>
-            <h3>Ürün Listesi</h3>
-            <button className='btn btn-primary px-4'>Yeni Ekle</button>
-        </div>
+    <div className="container">
+      <img src={logo} alt="logo" />
+      <div className="d-flex justify-content-between mt-5">
+        <h3>Ürün Listesi</h3>
+        <button className="btn btn-primary px-4">Yeni Ekle</button>
+      </div>
 
-        <table className='table mt-5'>
+      <table className="table mt-5">
         <thead>
-            <tr>
+          <tr>
             <th scope="col">Ürün Resmi</th>
             <th scope="col">Ürün Adı</th>
             <th scope="col">Ürün Açıklaması</th>
             <th scope="col">Fiyat</th>
-            <th scope='col'>Detay</th>
-            </tr>
+            <th scope="col">Detay</th>
+          </tr>
         </thead>
         <tbody>
-            <tr>
+          <tr>
             <th scope="row">1</th>
             <td>dasdas</td>
             <td>Otto</td>
             <td>@mdo</td>
             <td>@mdo</td>
-            </tr>
-            <tr>
+          </tr>
+          <tr>
             <th scope="row">2</th>
             <td>Jacob</td>
             <td>Thornton</td>
             <td>@fat</td>
             <td>@fat</td>
-            </tr>
-           
+          </tr>
         </tbody>
-        </table>
-       
-       
-
+      </table>
     </div>
-  )
-}
+  );
+};
