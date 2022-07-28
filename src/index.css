@@ -15,6 +15,22 @@ body {
   color: #fff;
 }
 
+
+.btn-primary:disabled {
+  background-color: #f99500c2;
+  border-color: #f99500c2;
+}
+
+.btn-primary:active {
+  background-color: #f99500c2;
+  border-color: #f99500c2;
+}
+
+.btn-primary:focus {
+  background-color: #f99500c2;
+  border-color: #f99500c2;
+}
+
 .btn-primary:hover {
   background-color: #f99500c2;
   border-color: #F99600;
@@ -23,13 +39,31 @@ body {
 
 .btn-secondary {
   background-color: #F92200;
+  border-color: #F92200;
   font-weight: bold;
   color: #fff;
 }
 
 
 .btn-secondary:hover {
+  background-color: #bb1a01;
+  border-color: #bb1a01;
+}
+
+
+.btn-secondary:disabled {
+  background-color: #f84125;
+  border-color: #f84125;
+}
+
+.btn-secondary:active {
   background-color: #F92200;
+  border-color: #F92200;
+}
+
+.btn-secondary:focus {
+  background-color: #F92200;
+  border-color: #F92200;
 }
 
 /*CUSTOM BUTTON CSS  END==================================================*/

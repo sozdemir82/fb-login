@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import toast  from "react-hot-toast";
+import toast from "react-hot-toast";
 
 const firebaseConfig = {
   apiKey: "AIzaSyD_JmLURGAuOVzbxCRvwyHRvF872o8H7Jo",
@@ -16,11 +16,10 @@ const auth = getAuth();
 
 export const login = async (email, password) => {
   try {
-        const { user } = await signInWithEmailAndPassword(auth, email, password);
-        return user;
-  }
-  catch (error) {
-        toast.error(error.message);
+    const { user } = await signInWithEmailAndPassword(auth, email, password);
+    return user;
+  } catch (error) {
+    toast.error(error.message);
   }
 };
 
