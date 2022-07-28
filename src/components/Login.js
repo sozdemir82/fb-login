@@ -2,9 +2,8 @@
 import logo from "../icons/logo.svg";
 import { login } from "../Firebase";
 import { useState } from "react";
-import { async } from "@firebase/util";
+//import { async } from "@firebase/util";
 import { Toaster } from "react-hot-toast";
-
 
 function Login() {
   const [email, setEmail] = useState("");
