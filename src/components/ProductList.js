@@ -1,7 +1,16 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import logo from "../icons/logo.svg";
 
 export const ProductList = () => {
+
+    const [products, setProducts] = useState([]);
+    
+    useEffect(()=>{
+        fetch ("https://fakestoreapi.com/products")
+        .then(response => response.json())
+        .then(result => setProducts(result))
+        .catch(error => console.log(error));
+    }, [])
 
   return (
     <div className='container'>
@@ -24,7 +33,7 @@ export const ProductList = () => {
         <tbody>
             <tr>
             <th scope="row">1</th>
-            <td>Mark</td>
+            <td>dasdas</td>
             <td>Otto</td>
             <td>@mdo</td>
             <td>@mdo</td>
@@ -39,6 +48,8 @@ export const ProductList = () => {
            
         </tbody>
         </table>
+       
+       
 
     </div>
   )
