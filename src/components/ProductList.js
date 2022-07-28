@@ -25,14 +25,12 @@ export class ProductList extends React.Component {
   render() {
     return (
       <div className="container">
+        <img src={logo} alt="logo" />
 
-      <img src={logo} alt="logo" />
-
-      <div className="d-flex justify-content-between mt-5">
-        <h3>Ürün Listesi</h3>
-        <button className="btn btn-primary px-4">Yeni Ekle</button>
-      </div>
-
+        <div className="d-flex justify-content-between mt-5">
+          <h3>Ürün Listesi</h3>
+          <button className="btn btn-primary px-4">Yeni Ekle</button>
+        </div>
 
         <table className="table mt-3">
           <thead>
@@ -52,7 +50,9 @@ export class ProductList extends React.Component {
                 <td>{products.title}</td>
                 <td>{products.description}</td>
                 <td>{products.price}</td>
-                <td className="btn-details text-center"><img src={arrow} alt="details" /></td>
+                <td className="btn-details text-center">
+                  <img src={arrow} alt="details" />
+                </td>
               </tr>
             ))}
           </tbody>
