@@ -1,18 +1,26 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import logo from "../icons/logo.svg";
 import { login } from "../Firebase";
-import { useState } from "react";
-//import { async } from "@firebase/util";
+import {useNavigate} from "react-router-dom";
+import React, { useState } from "react";
 import { Toaster } from "react-hot-toast";
+import { useDispatch } from "react-redux";
+import { login as loginHandle } from "../store/auth";
 
 function Login() {
+  
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  
   const handleLogin = async (e) => {
     e.preventDefault();
     const user = await login(email, password);
-    console.log(user);
+    dispatch(loginHandle(user))
+    navigate('./ProductList', {
+      replace:true
+    })
   };
 
   return (

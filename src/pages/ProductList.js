@@ -1,14 +1,17 @@
+import React from "react";
 import logo from "../icons/logo.svg";
 import arrow from "../icons/arrow.svg";
-import React from "react";
+
 
 export class ProductList extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {
       products: [],
     };
   }
+
   componentDidMount() {
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
@@ -22,7 +25,10 @@ export class ProductList extends React.Component {
       );
   }
 
+  
+    
   render() {
+
     return (
       <div className="container">
         <img src={logo} alt="logo" />
@@ -46,7 +52,9 @@ export class ProductList extends React.Component {
           <tbody>
             {this.state.products.map((products) => (
               <tr>
-                <td>{products.image}</td>
+                <td>
+                  <img className="img-resize" src={products.image} alt="product-img"></img>
+                </td>
                 <td>{products.title}</td>
                 <td>{products.description}</td>
                 <td>{products.price}</td>
@@ -57,6 +65,8 @@ export class ProductList extends React.Component {
             ))}
           </tbody>
         </table>
+
+        
       </div>
     );
   }
